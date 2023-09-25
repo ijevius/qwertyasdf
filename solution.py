@@ -74,10 +74,11 @@ def get_combinations(from_str: str, to_str: str) -> list:
         for i in range(len(from_str), len(to_str)+1):
             result.append(["".join(p) for p in itertools.product(alphabet, repeat=i)
                            if check_acceptance("".join(p), from_str, to_str)])
-        return result
     else:
         logging.error("Illegal arguments")
         raise ValueError(f"Only [a-z] lowercase, given: {from_str} and {to_str}")
+
+    return result
 
 
 def main():
